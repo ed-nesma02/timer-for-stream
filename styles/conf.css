@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5px;
+}
+
+.form-conf {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.counter__label {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.counter__input {
+  width: 40px;
+}
+.price-per-hour__label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price-per-hour__input {
+  width: 55px;
+}
+
+.green-backgroud__label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.timeIncrease__label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.timeEdit {
+  width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}

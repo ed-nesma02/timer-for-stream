@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/conf.css" />
+    <title>Настройки</title>
+  </head>
+  <body>
+    <h1>Настройки</h1>
+    <form id="config" class="form-conf">
+      <label class="counter__label">
+        Укажите начальное время:
+        <input
+          class="counter__input counter__hour"
+          placeholder="час"
+          name="initialHours"
+          id="initialHours"
+          type="number"
+          value="0"
+        />:
+        <input
+          class="counter__input counter__min"
+          placeholder="мин"
+          name="initialMinutes"
+          id="initialMinutes"
+          type="number"
+          value="0"
+        />:
+        <input
+          class="counter__input counter__sec"
+          placeholder="сек"
+          name="initialSeconds"
+          id="initialSeconds"
+          type="number"
+          value="0"
+        />
+      </label>
+      <label class="price-per-hour__label">
+        Цена за час:
+        <input
+          type="number"
+          class="price-per-hour__input"
+          name="secondsAddedPerCurrency"
+          id="secondsAddedPerCurrency"
+          placeholder="1000"
+          value="1000"
+        />
+      </label>
+      <label class="token__label">
+        Токен Donation Alerts:
+        <input
+          type="password"
+          class="token__input"
+          name="donationAlertsToken"
+          id="donationAlertsToken"
+          placeholder="token"
+        />
+        <button class="token-btn" type="button">Показать</button>
+      </label>
+      <label for="isGreenBackground" class="green-backgroud__label">
+        Включить зеленый фон
+        <input
+          type="checkbox"
+          class="green-backgroud__label"
+          name="isGreenBackground"
+          id="isGreenBackground"
+          checked
+        />
+      </label>
+      <label class="timeIncrease__label">
+        Добавить по нажатию: +
+        <input
+          type="number"
+          class="timeEdit timeIncrease__input"
+          name="timeIncrease"
+          id="timeIncrease"
+          placeholder="10"
+          value="10"
+        />
+      </label>
+      <label class="timeDecrease__label">
+        Уменьшить по нажатию: -
+        <input
+          type="number"
+          class="timeEdit timeDecrease__input"
+          name="timeDecrease"
+          id="timeDecrease"
+          placeholder="10"
+          value="10"
+        />
+      </label>
+      <label for="substrate" class="substrate__label">
+        Подложка таймера
+        <input
+          type="color"
+          class="substrate-color__input"
+          name="substrateColor"
+          id="substrateColor"
+        />
+        <input
+          type="checkbox"
+          class="substrate__input"
+          name="isSubstrate"
+          id="isSubstrate"
+          checked
+        />
+      </label>
+      <label for="substrate" class="color-font__label">
+        Цвет таймера
+        <input
+          type="color"
+          class="color-font__input"
+          name="colorFont"
+          id="colorFont"
+        />
+      </label>
+      <label for="substrate" class="color-font-addSec__label">
+        Цвет добавления времени
+        <input
+          type="color"
+          class="color-font-addSec__input"
+          name="colorFontAddSec"
+          id="colorFontAddSec"
+        />
+      </label>
+      <label for="substrate" class="shadow__label">
+        Тень
+        <input
+          type="color"
+          class="shadow-color__input"
+          name="shadowColor"
+          id="shadowColor"
+        />
+        <input
+          type="checkbox"
+          class="shadow__input"
+          name="isShadow"
+          id="isShadow"
+          checked
+        />
+      </label>
+      <button class="save-conf" type="submit">Сохранить</button>
+    </form>
+    <script src="../js/conf.js"></script>
+  </body>
+</html>

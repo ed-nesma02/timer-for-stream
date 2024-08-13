@@ -1,0 +1,16 @@
+{
+  "initialHours": 16,
+  "initialMinutes": 0,
+  "initialSeconds": 43,
+  "secondsAddedPerCurrency": 1000,
+  "donationAlertsToken": "",
+  "timeIncrease": 10,
+  "timeDecrease": 10,
+  "substrateColor": "#cb1a1a",
+  "isSubstrate": true,
+  "colorFont": "#37ff00",
+  "colorFontAddSec": "#f57575",
+  "shadowColor": "#efff0a",
+  "isShadow": true,
+  "isGreenBackground": false
+}

@@ -12,7 +12,7 @@
   },
   "name": "counter-for-donatphone",
   "version": "1.0.0",
-  "description": "Счетчик для проведения донатофонов с donationalerts",
+  "description": "Счетчик для проведения донатофонов c использованием DonationAlerts",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",

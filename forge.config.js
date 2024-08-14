@@ -3,25 +3,22 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
   packagerConfig: {
+    name: 'Таймер для стрима',
     asar: true,
+    icon: './resources/icon-timer.ico'
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        authors: 'Eduard Nesmashnyi',
+        description: 'Счетчик для проведения донатофонов c использованием DonationAlerts'
+      }
     },
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
-    },
-    {
-      name: '@electron-forge/maker-deb',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-rpm',
-      config: {},
     },
   ],
   plugins: [

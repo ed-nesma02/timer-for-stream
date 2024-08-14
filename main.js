@@ -1,6 +1,9 @@
 const {app, BrowserWindow, ipcMain} = require('electron/main');
 const path = require('node:path');
 const fs = require('fs/promises');
+const {configApp} = require('./config.default');
+
+if (require('electron-squirrel-startup')) app.quit();
 
 async function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -30,11 +33,18 @@ async function createWindow() {
 
   ipcMain.handle('get-json-data', async () => {
     try {
+      await fs.access('config.json');
       const data = await fs.readFile('config.json', 'utf-8');
       return JSON.parse(data);
-    } catch (err) {
-      console.error('Error reading JSON file:', err);
-      throw err;
+    } catch (error) {
+      if (error.code === 'ENOENT') {
+        console.log('1');
+        await fs.writeFile('config.json', JSON.stringify(configApp), 'utf-8');
+        return configApp;
+      } else {
+        console.error('Error reading JSON file:', err);
+        throw err;
+      }
     }
   });
 

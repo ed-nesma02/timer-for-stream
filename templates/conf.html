@@ -172,7 +172,7 @@
         />
         px
       </label>
-      <label for="fontFamily" class="font-family__label">Ваш город</label>
+      <label for="fontFamily" class="font-family__label">Шрифт</label>
       <select name="fontFamily" id="fontFamily"></select>
       <label for="colorFont" class="edit-color-title color-font__label">
         Цвет цифр
@@ -191,8 +191,22 @@
           name="fontSize"
           id="fontSize"
           value="5"
+          required
         />
         px
+      </label>
+      <label for="alignment" class="timeEdit__label alignment__label">
+        Выравнивание
+        <input
+          type="number"
+          class="timeEdit alignment__input"
+          name="alignment"
+          id="alignment"
+          value="100"
+          min="0"
+          required
+        />
+        %
       </label>
       <label for="letterSpacing" class="timeEdit__label leter-spacing__label">
         Растояние между цифр
@@ -202,6 +216,7 @@
           name="letterSpacing"
           id="letterSpacing"
           value="0"
+          required
         />
         px
       </label>

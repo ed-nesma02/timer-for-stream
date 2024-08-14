@@ -1,9 +1,9 @@
 const main = async () => {
   const settings = await window.electronAPI.getJsonData();
-  console.log('Received JSON data settings:', settings);
 
   const timer = document.getElementById('timeText');
   const cotnainer = document.getElementById('container');
+  const textDiv = document.getElementById('textDiv');
 
   document.body.style.backgroundColor = settings.isGreenBackground
     ? '#00ff00'
@@ -31,8 +31,9 @@ const main = async () => {
   );
   document.documentElement.style.setProperty(
     '--shadow-color-add-time',
-    settings.colorShadowAddSec + '33'
+    settings.colorShadowAddSec
   );
+  textDiv.style.height = settings.alignment + '%';
 
   electronAPI.onUpdateIsGreenBackground((arg) => {
     document.body.style.backgroundColor = arg ? '#00ff00' : '#f7fff7';
@@ -41,7 +42,6 @@ const main = async () => {
     timer.style.fontFamily = `${arg}, sans-serif`;
   });
   electronAPI.onUpdateSubstrateColor(({color, isSubstrate}) => {
-    console.log({color, isSubstrate});
     cotnainer.style.backgroundColor = isSubstrate ? color : 'transparent';
   });
   electronAPI.onUpdateShadowColor(({color, isShadow}) => {
@@ -77,12 +77,15 @@ const main = async () => {
   electronAPI.onUpdateColorShadowAddSec(({color, isShadow}) => {
     document.documentElement.style.setProperty(
       '--shadow-color-add-time',
-      isShadow ? color + '33' : 'transparent'
+      isShadow ? color : 'transparent'
     );
   });
 
   electronAPI.onUpdateLetterSpacing((arg) => {
     timer.style.letterSpacing = arg + 'px';
+  });
+  electronAPI.onUpdateAlignment((arg) => {
+    textDiv.style.height = arg + '%';
   });
 
   document.addEventListener('keydown', (e) => {
@@ -201,7 +204,6 @@ const main = async () => {
           newSettings.initialHours = parseInt(timeCounter[0]);
           newSettings.initialMinutes = parseInt(timeCounter[1]);
           newSettings.initialSeconds = parseInt(timeCounter[2]);
-          console.log(newSettings);
           window.electronAPI.saveConf(newSettings);
         }
         return;

@@ -46,6 +46,7 @@
     const colorShadowAddSec = document.getElementById('colorShadowAddSec');
     const fontFamily = document.getElementById('fontFamily');
     const letterSpacing = document.getElementById('letterSpacing');
+    const alignment = document.getElementById('alignment');
 
     initialHours.value = conf.initialHours;
     initialMinutes.value = conf.initialMinutes;
@@ -71,6 +72,7 @@
     colorShadowAddSec.value = conf.colorShadowAddSec;
     fontFamily.value = conf.fontFamily;
     letterSpacing.value = conf.letterSpacing;
+    alignment.value = conf.alignment;
 
     isGreenBackground.addEventListener('change', (e) => {
       electronAPI.updateIsGreenBackground(e.target.checked);
@@ -140,6 +142,10 @@
       electronAPI.updateLetterSpacing(e.target.value);
     });
 
+    alignment.addEventListener('change', (e) => {
+      electronAPI.updateAlignment(e.target.value);
+    })
+
     const createSelect = () => {
       for (let i = 0; i < fontsList.length; i++) {
         const option = document.createElement('option');
@@ -152,7 +158,6 @@
     createSelect();
 
     fontFamily.addEventListener('change', (e) => {
-      console.log(e.target.value);
       electronAPI.updateFontFamily(e.target.value);
     });
 

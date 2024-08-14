@@ -21,6 +21,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   updateColorShadowAddSec: ({color, isShadow}) => ipcRenderer.send('update-color-shadow-add-sec', {color, isShadow}),
   updateFontFamily: (font) => ipcRenderer.send('update-font-family', font),
   updateLetterSpacing: (size) => ipcRenderer.send('update-letter-spacing', size),
+  updateAlignment: (alignment) => ipcRenderer.send('update-alignment', alignment),
   onUpdateIsGreenBackground: (callback) => ipcRenderer.on('on-update-is-green-background', (_event, value) => callback(value)),
   onUpdateSubstrateColor: (callback) => ipcRenderer.on('on-update-substrate-color', (_event, value) => callback(value)),
   onUpdateShadowColor: (callback) => ipcRenderer.on('on-update-shadow-color', (_event, value) => callback(value)),
@@ -35,4 +36,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   onUpdateColorShadowAddSec:(callback) => ipcRenderer.on('on-update-color-shadow-add-sec', (_event, value) => callback(value)),
   onUpdateFontFamily: (callback) => ipcRenderer.on('on-update-font-family', (_event, value) => callback(value)),
   onUpdateLetterSpacing: (callback) => ipcRenderer.on('on-update-letter-spacing', (_event, value) => callback(value)),
+  onUpdateAlignment: (callback) => ipcRenderer.on('on-update-alignment', (_event, value) => callback(value)),
 });

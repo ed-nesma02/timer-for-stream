@@ -1,6 +1,5 @@
 (async () => {
   const conf = await window.electronAPI.getJsonData();
-  console.log('Received JSON data DA:', conf);
 
   const DA_CENTRIFUGE_URL =
     'wss://centrifugo.donationalerts.com/connection/websocket';
@@ -23,10 +22,9 @@
     });
     donationalerts.on('donation', (donate) => {
       donate = JSON.parse(donate);
-      console.log(donate);
       if (donate.alert_type == '1') {
         const {amount_main} = donate;
-        window.electronAPI.updateCounter(
+        electronAPI.updateCounter(
           amount_main * (3600 / +conf.secondsAddedPerCurrency)
         );
       }

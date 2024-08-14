@@ -1,1 +1,27 @@
-{"initialHours":"6","initialMinutes":"29","initialSeconds":"38","secondsAddedPerCurrency":465,"donationAlertsToken":"","isGreenBackground":true,"timeIncrease":10,"timeDecrease":10,"substrateColor":"#000000","isSubstrate":true,"shadowColor":"#000000","isShadow":true,"substrateWidth":"650","substrateHeight":"180","substrateRadius":"25","fontFamily":"Manrope","colorFont":"#ffffff","fontSize":"110","letterSpacing":"0","colorFontAddSec":"#858585","colorShadowAddSec":"#000000","isShadowAddSec":true,"isFontBold":false,"isFontItalic":false}
+{
+  "initialHours": 5,
+  "initialMinutes": 0,
+  "initialSeconds": 0,
+  "secondsAddedPerCurrency": 1000,
+  "donationAlertsToken": "",
+  "timeIncrease": 10,
+  "timeDecrease": 10,
+  "substrateColor": "#f7fff7",
+  "isSubstrate": true,
+  "shadowColor": "#000000",
+  "isShadow": true,
+  "substrateWidth": "500",
+  "substrateHeight": "180",
+  "substrateRadius": "30",
+  "fontFamily": "Manrope",
+  "colorFont": "#292f36",
+  "fontSize": "80",
+  "alignment": "100",
+  "letterSpacing": "0",
+  "colorFontAddSec": "#f7fff7",
+  "colorShadowAddSec": "#292f36",
+  "isShadowAddSec": true,
+  "isGreenBackground": false,
+  "isFontBold": false,
+  "isFontItalic": false
+}

@@ -47,7 +47,6 @@ async function createWindow() {
       if (error) {
         return console.log(error);
       }
-      console.log('The file was written successfully.');
     });
     conf.hide();
     mainWindow.webContents.reloadIgnoringCache();
@@ -58,7 +57,6 @@ async function createWindow() {
       if (error) {
         return console.log(error);
       }
-      console.log('The file was written successfully.');
     });
   });
 
@@ -107,6 +105,9 @@ async function createWindow() {
   ipcMain.on('update-letter-spacing', (event, arg) => {
     mainWindow.send('on-update-letter-spacing', arg);
   });
+  ipcMain.on('update-alignment', (event, arg) => {
+    mainWindow.send('on-update-alignment', arg);
+  });
 
   conf.on('close', (e) => {
     e.preventDefault();
@@ -115,8 +116,6 @@ async function createWindow() {
 
   mainWindow.loadFile('index.html');
   conf.loadFile('./templates/conf.html');
-  mainWindow.webContents.openDevTools();
-  conf.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {

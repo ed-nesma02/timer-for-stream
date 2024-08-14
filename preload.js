@@ -19,6 +19,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   updateIsFontItalic: (bool) => ipcRenderer.send('update-is-font-Italic', bool),
   updateColorFontAddSec: (color) => ipcRenderer.send('update-color-font-add-sec', color),
   updateColorShadowAddSec: ({color, isShadow}) => ipcRenderer.send('update-color-shadow-add-sec', {color, isShadow}),
+  updateFontFamily: (font) => ipcRenderer.send('update-font-family', font),
+  updateLetterSpacing: (size) => ipcRenderer.send('update-letter-spacing', size),
   onUpdateIsGreenBackground: (callback) => ipcRenderer.on('on-update-is-green-background', (_event, value) => callback(value)),
   onUpdateSubstrateColor: (callback) => ipcRenderer.on('on-update-substrate-color', (_event, value) => callback(value)),
   onUpdateShadowColor: (callback) => ipcRenderer.on('on-update-shadow-color', (_event, value) => callback(value)),
@@ -31,4 +33,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   onUpdateIsFontItalic: (callback) => ipcRenderer.on('on-update-is-font-Italic', (_event, value) => callback(value)),
   onUpdateColorFontAddSec:(callback) => ipcRenderer.on('on-update-color-font-add-sec', (_event, value) => callback(value)),
   onUpdateColorShadowAddSec:(callback) => ipcRenderer.on('on-update-color-shadow-add-sec', (_event, value) => callback(value)),
+  onUpdateFontFamily: (callback) => ipcRenderer.on('on-update-font-family', (_event, value) => callback(value)),
+  onUpdateLetterSpacing: (callback) => ipcRenderer.on('on-update-letter-spacing', (_event, value) => callback(value)),
 });

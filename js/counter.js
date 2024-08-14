@@ -8,10 +8,13 @@ const main = async () => {
   document.body.style.backgroundColor = settings.isGreenBackground
     ? '#00ff00'
     : '#f7fff7';
+
+  timer.style.fontFamily = `${settings.fontFamily}, sans-serif`;
   timer.style.fontSize = settings.fontSize + 'px';
   timer.style.color = settings.colorFont;
   timer.style.fontWeight = settings.isFontBold ? '700' : '400';
   timer.style.fontStyle = settings.isFontItalic ? 'italic' : '';
+  timer.style.letterSpacing = settings.letterSpacing + 'px';
 
   cotnainer.style.backgroundColor = settings.isSubstrate
     ? settings.substrateColor
@@ -33,6 +36,9 @@ const main = async () => {
 
   electronAPI.onUpdateIsGreenBackground((arg) => {
     document.body.style.backgroundColor = arg ? '#00ff00' : '#f7fff7';
+  });
+  electronAPI.onUpdateFontFamily((arg) => {
+    timer.style.fontFamily = `${arg}, sans-serif`;
   });
   electronAPI.onUpdateSubstrateColor(({color, isSubstrate}) => {
     console.log({color, isSubstrate});
@@ -73,6 +79,10 @@ const main = async () => {
       '--shadow-color-add-time',
       isShadow ? color + '33' : 'transparent'
     );
+  });
+
+  electronAPI.onUpdateLetterSpacing((arg) => {
+    timer.style.letterSpacing = arg + 'px';
   });
 
   document.addEventListener('keydown', (e) => {

@@ -65,7 +65,6 @@ async function createWindow() {
   ipcMain.on('update-counter', (event, sec) => {
     mainWindow.send('on-update-counter', sec);
   });
-
   ipcMain.on('update-is-green-background', (event, arg) => {
     mainWindow.send('on-update-is-green-background', arg);
   });
@@ -102,7 +101,12 @@ async function createWindow() {
   ipcMain.on('update-color-shadow-add-sec', (event, arg) => {
     mainWindow.send('on-update-color-shadow-add-sec', arg);
   });
-
+  ipcMain.on('update-font-family', (event, arg) => {
+    mainWindow.send('on-update-font-family', arg);
+  });
+  ipcMain.on('update-letter-spacing', (event, arg) => {
+    mainWindow.send('on-update-letter-spacing', arg);
+  });
 
   conf.on('close', (e) => {
     e.preventDefault();

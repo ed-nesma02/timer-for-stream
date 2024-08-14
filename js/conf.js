@@ -3,8 +3,21 @@
     const conf = await window.electronAPI.getJsonData();
     console.log('Received JSON data:', conf);
 
+    const fontsList = [
+      'Manrope',
+      'Arial',
+      'Impact',
+      'Lucida Console',
+      'Tahoma',
+      'Times New Roman',
+      'Calibri',
+      'Georgia',
+      'Verdana',
+      'Roboto',
+      'Montserrat',
+    ];
+
     const tokenBtn = document.querySelector('.token-btn');
-    const setButton = document.querySelector('.save-conf');
     const form = document.getElementById('config');
 
     const initialHours = document.getElementById('initialHours');
@@ -31,6 +44,8 @@
     const isFontItalic = document.getElementById('isFontItalic');
     const isShadowAddSec = document.getElementById('isShadowAddSec');
     const colorShadowAddSec = document.getElementById('colorShadowAddSec');
+    const fontFamily = document.getElementById('fontFamily');
+    const letterSpacing = document.getElementById('letterSpacing');
 
     initialHours.value = conf.initialHours;
     initialMinutes.value = conf.initialMinutes;
@@ -54,6 +69,8 @@
     isFontItalic.checked = conf.isFontItalic;
     isShadowAddSec.checked = conf.isShadowAddSec;
     colorShadowAddSec.value = conf.colorShadowAddSec;
+    fontFamily.value = conf.fontFamily;
+    letterSpacing.value = conf.letterSpacing;
 
     isGreenBackground.addEventListener('change', (e) => {
       electronAPI.updateIsGreenBackground(e.target.checked);
@@ -113,11 +130,30 @@
       });
     });
     isShadowAddSec.addEventListener('change', (e) => {
-      console.log(e.target.checked, colorShadowAddSec.value);
       electronAPI.updateColorShadowAddSec({
         isShadow: e.target.checked,
         color: colorShadowAddSec.value,
       });
+    });
+
+    letterSpacing.addEventListener('change', (e) => {
+      electronAPI.updateLetterSpacing(e.target.value);
+    });
+
+    const createSelect = () => {
+      for (let i = 0; i < fontsList.length; i++) {
+        const option = document.createElement('option');
+        option.value = fontsList[i];
+        option.text = fontsList[i];
+        if (conf.fontFamily === fontsList[i]) option.selected = true;
+        fontFamily.add(option);
+      }
+    };
+    createSelect();
+
+    fontFamily.addEventListener('change', (e) => {
+      console.log(e.target.value);
+      electronAPI.updateFontFamily(e.target.value);
     });
 
     tokenBtn.addEventListener('click', () => {

@@ -172,8 +172,10 @@
         />
         px
       </label>
+      <label for="fontFamily" class="font-family__label">Ваш город</label>
+      <select name="fontFamily" id="fontFamily"></select>
       <label for="colorFont" class="edit-color-title color-font__label">
-        Цвет таймера
+        Цвет цифр
         <input
           type="color"
           class="color-picker color-font__input"
@@ -182,13 +184,24 @@
         />
       </label>
       <label for="fontSize" class="timeEdit__label font-size__label">
-        Размер цифр таймера
+        Размер цифр
         <input
           type="number"
           class="timeEdit font-size__input"
           name="fontSize"
           id="fontSize"
           value="5"
+        />
+        px
+      </label>
+      <label for="letterSpacing" class="timeEdit__label leter-spacing__label">
+        Растояние между цифр
+        <input
+          type="number"
+          class="timeEdit leter-spacing__input"
+          name="letterSpacing"
+          id="letterSpacing"
+          value="0"
         />
         px
       </label>
@@ -212,7 +225,10 @@
           checked
         />
       </label>
-      <label for="colorFontAddSec" class="edit-color-title color-font-addSec__label">
+      <label
+        for="colorFontAddSec"
+        class="edit-color-title color-font-addSec__label"
+      >
         Цвет добавления времени
         <input
           type="color"

@@ -19,6 +19,8 @@
           id="initialHours"
           type="number"
           value="0"
+          min="0"
+          required
         />:
         <input
           class="counter__input counter__min"
@@ -27,6 +29,9 @@
           id="initialMinutes"
           type="number"
           value="0"
+          max="59"
+          min="0"
+          required
         />:
         <input
           class="counter__input counter__sec"
@@ -35,9 +40,12 @@
           id="initialSeconds"
           type="number"
           value="0"
+          max="59"
+          min="0"
+          required
         />
       </label>
-      <label class="price-per-hour__label">
+      <label for="secondsAddedPerCurrency" class="price-per-hour__label">
         Цена за час:
         <input
           type="number"
@@ -46,9 +54,10 @@
           id="secondsAddedPerCurrency"
           placeholder="1000"
           value="1000"
+          required
         />
       </label>
-      <label class="token__label">
+      <label for="donationAlertsToken" class="token__label">
         Токен Donation Alerts:
         <input
           type="password"
@@ -63,14 +72,14 @@
         Включить зеленый фон
         <input
           type="checkbox"
-          class="green-backgroud__label"
+          class="green-backgroud__input"
           name="isGreenBackground"
           id="isGreenBackground"
           checked
         />
       </label>
-      <label class="timeIncrease__label">
-        Добавить по нажатию: +
+      <label for="timeIncrease" class="timeEdit__label timeIncrease__label">
+        Добавить по нажатию:
         <input
           type="number"
           class="timeEdit timeIncrease__input"
@@ -78,10 +87,12 @@
           id="timeIncrease"
           placeholder="10"
           value="10"
+          required
         />
+        мин
       </label>
-      <label class="timeDecrease__label">
-        Уменьшить по нажатию: -
+      <label for="timeDecrease" class="timeEdit__label timeDecrease__label">
+        Уменьшить по нажатию:
         <input
           type="number"
           class="timeEdit timeDecrease__input"
@@ -89,13 +100,15 @@
           id="timeDecrease"
           placeholder="10"
           value="10"
+          required
         />
+        мин
       </label>
-      <label for="substrate" class="substrate__label">
+      <label for="substrateColor" class="edit-color-title substrate__label">
         Подложка таймера
         <input
           type="color"
-          class="substrate-color__input"
+          class="color-picker substrate-color__input"
           name="substrateColor"
           id="substrateColor"
         />
@@ -107,29 +120,11 @@
           checked
         />
       </label>
-      <label for="substrate" class="color-font__label">
-        Цвет таймера
-        <input
-          type="color"
-          class="color-font__input"
-          name="colorFont"
-          id="colorFont"
-        />
-      </label>
-      <label for="substrate" class="color-font-addSec__label">
-        Цвет добавления времени
-        <input
-          type="color"
-          class="color-font-addSec__input"
-          name="colorFontAddSec"
-          id="colorFontAddSec"
-        />
-      </label>
-      <label for="substrate" class="shadow__label">
+      <label for="shadowColor" class="edit-color-title shadow__label">
         Тень
         <input
           type="color"
-          class="shadow-color__input"
+          class="color-picker shadow-color__input"
           name="shadowColor"
           id="shadowColor"
         />
@@ -138,6 +133,107 @@
           class="shadow__input"
           name="isShadow"
           id="isShadow"
+          checked
+        />
+      </label>
+      <label for="substrateWidth" class="substrate-width__label">
+        Ширина подложки
+        <input
+          type="number"
+          class="w-40 substrate-width__input"
+          name="substrateWidth"
+          id="substrateWidth"
+          value="500"
+          required
+        />
+        px
+      </label>
+      <label for="substrateHeight" class="substrate-height__label">
+        Высота подложки
+        <input
+          type="number"
+          class="w-40 substrate-height__input"
+          name="substrateHeight"
+          id="substrateHeight"
+          value="180"
+          required
+        />
+        px
+      </label>
+      <label for="substrateRadius" class="substrate-radius__label">
+        Скругление подложки
+        <input
+          type="number"
+          class="w-40 substrate-radius__input"
+          name="substrateRadius"
+          id="substrateRadius"
+          value="0"
+          required
+        />
+        px
+      </label>
+      <label for="colorFont" class="edit-color-title color-font__label">
+        Цвет таймера
+        <input
+          type="color"
+          class="color-picker color-font__input"
+          name="colorFont"
+          id="colorFont"
+        />
+      </label>
+      <label for="fontSize" class="timeEdit__label font-size__label">
+        Размер цифр таймера
+        <input
+          type="number"
+          class="timeEdit font-size__input"
+          name="fontSize"
+          id="fontSize"
+          value="5"
+        />
+        px
+      </label>
+      <label for="isFontBold" class="font-bold__label">
+        Жирный
+        <input
+          type="checkbox"
+          class="font-bold__input"
+          name="isFontBold"
+          id="isFontBold"
+          checked
+        />
+      </label>
+      <label for="isFontItalic" class="font-italic__label">
+        Курсив
+        <input
+          type="checkbox"
+          class="font-italic__input"
+          name="isFontItalic"
+          id="isFontItalic"
+          checked
+        />
+      </label>
+      <label for="colorFontAddSec" class="edit-color-title color-font-addSec__label">
+        Цвет добавления времени
+        <input
+          type="color"
+          class="color-picker color-font-addSec__input"
+          name="colorFontAddSec"
+          id="colorFontAddSec"
+        />
+      </label>
+      <label for="colorShadowAddSec" class="color-shadow-addSec__label">
+        Тень добавления времени
+        <input
+          type="color"
+          class="color-picker color-shadow-addSec__input"
+          name="colorShadowAddSec"
+          id="colorShadowAddSec"
+        />
+        <input
+          type="checkbox"
+          class="is-shadow-addSec__input"
+          name="isShadowAddSec"
+          id="isShadowAddSec"
           checked
         />
       </label>

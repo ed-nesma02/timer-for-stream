@@ -29,10 +29,6 @@
         window.electronAPI.updateCounter(
           amount_main * (3600 / +conf.secondsAddedPerCurrency)
         );
-        // addTime(
-        //   endingTime,
-        //   amount_main * (3600 / +conf.secondsAddedPerCurrency)
-        // );
       }
     });
   }

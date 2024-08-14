@@ -1,27 +1,34 @@
 const {contextBridge, ipcRenderer} = require('electron/renderer');
-const fs = require('fs');
-
-// const main = async () => {
-//   let data = await fs.promises.readFile('config.json', 'utf8').then((data) => {
-//     return JSON.parse(data);
-//   });
-
-//   contextBridge.exposeInMainWorld('electronAPI', {
-//     isOpenConf: (isOpen) => ipcRenderer.send('open-conf', isOpen),
-//     saveConf: (conf) => ipcRenderer.send('save-conf', conf),
-//     saveConfRestart: (conf) => ipcRenderer.send('save-conf-restart', conf),
-//     dataJSONFile: data,
-//   });
-// };
-
-// main();
 
 contextBridge.exposeInMainWorld('electronAPI', {
   isOpenConf: (isOpen) => ipcRenderer.send('open-conf', isOpen),
   saveConf: (conf) => ipcRenderer.send('save-conf', conf),
   saveConfRestart: (conf) => ipcRenderer.send('save-conf-restart', conf),
-  onJsonData: (callback) => ipcRenderer.on('json-data', (event, data) => callback(data)),
   getJsonData: () => ipcRenderer.invoke('get-json-data'),
-  updateCounter: (sec) => ipcRenderer.send('update-counter-DA', sec),
-  onUpdateCounter: (callback) => ipcRenderer.on('update-counter', (_event, value) => callback(value)),
+  updateCounter: (sec) => ipcRenderer.send('update-counter', sec),
+  onUpdateCounter: (callback) => ipcRenderer.on('on-update-counter', (_event, value) => callback(value)),
+  updateIsGreenBackground: (bool) => ipcRenderer.send('update-is-green-background', bool),
+  updateSubstrateColor: ({color, isSubstrate}) => ipcRenderer.send('update-substrate-color', {color, isSubstrate}),
+  updateShadowColor: ({color, isShadow}) => ipcRenderer.send('update-shadow-color', {color, isShadow}),
+  updateSubstrateWidth: (width) => ipcRenderer.send('update-substrate-width', width),
+  updateSubstrateHeight: (height) => ipcRenderer.send('update-substrate-height', height),
+  updateSubstrateRadius: (radius) => ipcRenderer.send('update-substrate-radius', radius),
+  updateColorFont: (color) => ipcRenderer.send('update-color-font', color),
+  updateFontSize: (size) => ipcRenderer.send('update-font-size', size),
+  updateIsFontBold: (bool) => ipcRenderer.send('update-is-font-fold', bool),
+  updateIsFontItalic: (bool) => ipcRenderer.send('update-is-font-Italic', bool),
+  updateColorFontAddSec: (color) => ipcRenderer.send('update-color-font-add-sec', color),
+  updateColorShadowAddSec: ({color, isShadow}) => ipcRenderer.send('update-color-shadow-add-sec', {color, isShadow}),
+  onUpdateIsGreenBackground: (callback) => ipcRenderer.on('on-update-is-green-background', (_event, value) => callback(value)),
+  onUpdateSubstrateColor: (callback) => ipcRenderer.on('on-update-substrate-color', (_event, value) => callback(value)),
+  onUpdateShadowColor: (callback) => ipcRenderer.on('on-update-shadow-color', (_event, value) => callback(value)),
+  onUpdateSubstrateWidth: (callback) => ipcRenderer.on('on-update-substrate-width', (_event, value) => callback(value)),
+  onUpdateSubstrateHeight: (callback) => ipcRenderer.on('on-update-substrate-height', (_event, value) => callback(value)),
+  onUpdateSubstrateRadius: (callback) => ipcRenderer.on('on-update-substrate-radius', (_event, value) => callback(value)),
+  onUpdateColorFont: (callback) => ipcRenderer.on('on-update-color-font', (_event, value) => callback(value)),
+  onUpdateFontSize: (callback) => ipcRenderer.on('on-update-font-size', (_event, value) => callback(value)),
+  onUpdateIsFontBold: (callback) => ipcRenderer.on('on-update-is-font-fold', (_event, value) => callback(value)),
+  onUpdateIsFontItalic: (callback) => ipcRenderer.on('on-update-is-font-Italic', (_event, value) => callback(value)),
+  onUpdateColorFontAddSec:(callback) => ipcRenderer.on('on-update-color-font-add-sec', (_event, value) => callback(value)),
+  onUpdateColorShadowAddSec:(callback) => ipcRenderer.on('on-update-color-shadow-add-sec', (_event, value) => callback(value)),
 });

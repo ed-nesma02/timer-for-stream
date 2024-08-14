@@ -16,8 +16,9 @@ body {
   --shadow-color: #00000020;
   --text-color: #292f36;
   --icon-color: #424850;
+  --color-add-time:#f7fff7;
+  --shadow-color-add-time:#00000020;
 }
-
 
 
 #container {
@@ -42,7 +43,7 @@ body {
 
 p {
   color: var(--text-color);
-  font-size: 5rem;
+  font-size: 80px;
   z-index: 1;
 }
 
@@ -62,8 +63,6 @@ canvas {
   z-index: 2;
 }
 
-
-
 .addedTime {
   position: absolute;
   top: 50%;
@@ -73,9 +72,9 @@ canvas {
   display: none;
   z-index: 5;
   font-weight: 400;
-  font-size: 3.25rem;
-  color: var(--background-color);
-  text-shadow: 0 0 1.5rem var(--text-color);
+  font-size: 52px;
+  color: var(--color-add-time);
+  text-shadow: 0 0 1.5rem var(--shadow-color-add-time);
   transition: top 1s ease-out, opacity .5s ease-out;
 }
 

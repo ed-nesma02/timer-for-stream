@@ -5,7 +5,11 @@
 }
 
 body {
-  padding: 5px;
+  padding: 10px;
+}
+
+.w-40 {
+  width: 40px;
 }
 
 .form-conf {
@@ -26,6 +30,7 @@ body {
 .counter__input {
   width: 40px;
 }
+
 .price-per-hour__label {
   display: flex;
   gap: 10px;
@@ -42,14 +47,26 @@ body {
   align-items: center;
 }
 
-.timeIncrease__label {
+.timeEdit__label {
   display: flex;
-  gap: 10px;
   align-items: center;
 }
 
 .timeEdit {
   width: 50px;
+  margin-left: 10px;
+}
+
+
+.edit-color-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-picker {
+  width: 25px;
+  height: 25px;
 }
 
 input::-webkit-outer-spin-button,
